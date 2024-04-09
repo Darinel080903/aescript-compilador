@@ -2,6 +2,7 @@ import tkinter as tk
 
 import sintaxis
 from generate_code import generate_python_code
+import generate_code
 from lexer import lexer
 import re
 
@@ -23,6 +24,8 @@ class IDESimulator:
 
 
     def validate_code(self):
+        generate_code.variables = []
+        generate_code.value_variables = []
         self.result_text.delete("1.0", tk.END)
         self.console_text.delete("1.0", tk.END)
         self.console_text.insert(tk.END, "Console output:\n")

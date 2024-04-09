@@ -89,9 +89,7 @@ def generate_python_code(parsed_output):
             for_result.clear()
             for i in range(statement[1]):
                 generate_python_code(statement[2])
-                for_result.append(python_code)
-        elif statement[0] == 'conditional_statement':
-            if statement[1] in variables:
+                 
                 left = value_variables[variables.index(statement[1])]
             else:
                 left = statement[1]
